@@ -1,0 +1,14 @@
+:authority:www.reddit.com
+:method:POST
+:path:/api/check_username.json
+:scheme:https
+accept:application/json, text/javascript, */*; q=0.01
+accept-encoding:gzip, deflate, br
+accept-language:en-US,en;q=0.8
+content-length:8
+content-type:application/x-www-form-urlencoded; charset=UTF-8
+cookie:loid=000000000009m762lu.2.1502053272583.Z0FBQUFBQlpoNE9ZeXJfc1BPQ2pMUEhXaWh4WmNEVC0yR3RLV3I2Zll2d1JkWEFzTkd3SDlYYXROVTItdHBRYkQ1ckE5NTQyS0QxTlFObWNkbEx0cVUzWVh6Mnd4RkJXRXB5UEItSjE0U2g2d2JVM21TSHRBcWhGZzFuZWRhMGVvM2hpZFBMUjM3M0Q; edgebucket=6a6cgYlsuoivp7NkKX; pc=wf; session_tracker=4504jB6Geh6mEDvqHW.0.1502053703473.Z0FBQUFBQlpoNFZIQ0NFVzNpV2t4MWZSakV5d1pOTUszMXUtRnJNeUdYQjZ4SGszOTZaclJVcjRYRnlJa2JWV3ZPaWNvSUtjSFRMYVA1Zm9BcXFocDVkOVNmX0xoS1pQVnVLQ0VEMndwLUdIVGJ3cmIxT0E3Ulk4VnBja1NxQ0IxVGE0VWV2azl3WDg
+origin:https://www.reddit.com
+referer:https://www.reddit.com/
+user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36
+x-requested-with:XMLHttpRequest
