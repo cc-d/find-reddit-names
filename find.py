@@ -28,7 +28,6 @@ def main():
         if r.status_code == 404:
             sleep(2)
             result = check(name)
-            print result
             if result:
                 with open('possible.txt', 'a+') as p:
                     p.write(name + '\n')

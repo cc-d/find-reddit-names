@@ -16,6 +16,7 @@ def check(name):
     headers = parse_headers('headers.txt')
     r = requests.post('https://www.reddit.com/api/check_username.json', data={'user':name}, headers=headers)
     j = json.loads(r.text)
+    print j
     if j == {}:
         return True
     else:
