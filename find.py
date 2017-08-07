@@ -6,7 +6,7 @@ from functions import parse_headers, check
 
 def main():
     name_length = 3 # length of names to brute force
-    delay = 0.1 # time between requests
+    delay = 0.2 # time between requests
     user_agent = 'Just looking for some unique usernames 1.0'
 
     chars = 'abcdefghijklmnopqrstuvwxyz123456789'# already looked for names with - _
@@ -25,6 +25,11 @@ def main():
     for name in names:
         headers = {'User-Agent': user_agent}
         r = requests.get('https://www.reddit.com/user/%s' % name, headers=headers)
+        
+        while r.status_code == 403: # if forbidden retry in 1 second
+            r = requests.get('https://www.reddit.com/user/%s' % name, headers=headers)
+            sleep(2)
+
         if r.status_code == 404:
             sleep(2)
             result = check(name)
