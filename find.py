@@ -14,6 +14,7 @@ def main():
 
     for x in product(chars, repeat=3):
         j = ''.join(x)
+        names.append(''.join(x))
 
     shuffle(names)
     mnames = len(names)
