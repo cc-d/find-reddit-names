@@ -6,17 +6,16 @@ from functions import parse_headers, check
 
 def main():
     name_length = 3 # length of names to brute force
-    delay = 0.2 # time between requests
+    delay = 2 # time between requests
     user_agent = 'Just looking for some unique usernames 1.0'
-
-    chars = 'abcdefghijklmnopqrstuvwxyz123456789'# already looked for names with - _
+    chars = 'abcdefghijklmnopqrstuvwxyz123456789-_'# 
     names = []
 
     for x in product(chars, repeat=3):
         j = ''.join(x)
         names.append(''.join(x))
 
-    shuffle(names)
+    shuffle(names) # inceases chances of finding aname
     mnames = len(names)
     count = 0
     print mnames, 'possible names.'
@@ -26,9 +25,14 @@ def main():
         headers = {'User-Agent': user_agent}
         r = requests.get('https://www.reddit.com/user/%s' % name, headers=headers)
         
+        zsleep = 2
         while r.status_code == 403: # if forbidden retry in 1 second
             r = requests.get('https://www.reddit.com/user/%s' % name, headers=headers)
-            sleep(2)
+            print 'Sleeping for', zsleep
+            sleep(zsleep)
+            zsleep = zsleep + zsleep
+            if zsleep >= 32: # limit maximum number of retires
+                break
 
         if r.status_code == 404:
             sleep(2)
