@@ -1,3 +1,4 @@
+:THESE ARE SAMPLE HEADERS CHANGE HTEM
 :authority:www.reddit.com
 :method:POST
 :path:/api/check_username.json
